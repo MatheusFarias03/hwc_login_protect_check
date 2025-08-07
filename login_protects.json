@@ -1,0 +1,9 @@
+{
+  "login_protects": [
+    {
+      "enabled": true,
+      "user_id": "ba0f3e0bf9e24d488c3bb116a582e844",
+      "verification_method": "email"
+    }
+  ]
+}

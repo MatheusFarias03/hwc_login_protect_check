@@ -1,0 +1,83 @@
+{
+  "links": {
+    "next": null,
+    "previous": null,
+    "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users"
+  },
+  "users": [
+    {
+      "domain_id": "a70eb3e519b34ce1bfd7f98023004f22",
+      "pwd_status": false,
+      "name": "HIS_Horiz",
+      "description": "由HIS系统创建，用于华为内部云账号安全治理，请勿删除或修改权限",
+      "password_expires_at": null,
+      "links": {
+        "next": null,
+        "previous": null,
+        "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users/81f1eabf86904e7caf1f5e125aecd87b"
+      },
+      "id": "81f1eabf86904e7caf1f5e125aecd87b",
+      "access_mode": "programmatic",
+      "enabled": true
+    },
+    {
+      "domain_id": "a70eb3e519b34ce1bfd7f98023004f22",
+      "pwd_status": false,
+      "name": "HIS_IAM",
+      "description": "由HIS系统创建，用于华为内部云账号安全治理，请勿删除或修改权限",
+      "password_expires_at": null,
+      "links": {
+        "next": null,
+        "previous": null,
+        "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users/b66b1035e17b40cfb61e965c9b1c3cd6"
+      },
+      "id": "b66b1035e17b40cfb61e965c9b1c3cd6",
+      "access_mode": "programmatic",
+      "enabled": true
+    },
+    {
+      "domain_id": "a70eb3e519b34ce1bfd7f98023004f22",
+      "pwd_status": false,
+      "default_project_id": "",
+      "name": "hwstaff_intl_m00929874",
+      "password_expires_at": null,
+      "links": {
+        "next": null,
+        "previous": null,
+        "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users/08c97e32fc56433ca73b8bd85a8cefc9"
+      },
+      "id": "08c97e32fc56433ca73b8bd85a8cefc9",
+      "access_mode": "default",
+      "enabled": true
+    },
+    {
+      "domain_id": "a70eb3e519b34ce1bfd7f98023004f22",
+      "pwd_status": true,
+      "name": "matheus-matsumoto",
+      "description": "Matheus normal user",
+      "password_expires_at": null,
+      "links": {
+        "next": null,
+        "previous": null,
+        "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users/ba0f3e0bf9e24d488c3bb116a582e844"
+      },
+      "id": "ba0f3e0bf9e24d488c3bb116a582e844",
+      "access_mode": "default",
+      "enabled": true
+    },
+    {
+      "domain_id": "a70eb3e519b34ce1bfd7f98023004f22",
+      "pwd_status": false,
+      "name": "SecMasterUser",
+      "password_expires_at": null,
+      "links": {
+        "next": null,
+        "previous": null,
+        "self": "https://iam.sa-brazil-1.myhuaweicloud.com/v3/users/b48ec5878fae49a1a1e6a682b8be1444"
+      },
+      "id": "b48ec5878fae49a1a1e6a682b8be1444",
+      "access_mode": "default",
+      "enabled": true
+    }
+  ]
+}
