@@ -1,6 +1,12 @@
 #!/bin/bash
 
 
+# Color codes.
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color / reset
+
+
 # Generate the JSON files.
 hcloud IAM ListUserLoginProtects/v3 > login_protects.json
 hcloud IAM KeystoneListUsers/v3 > list_users.json
@@ -37,6 +43,7 @@ done
 
 
 # Iterate on both to see who has MFA activated.
+echo
 for i in "${users_id[@]}"; do
 	found=false
 	for j in "${protect_user_id[@]}"; do
@@ -46,6 +53,18 @@ for i in "${users_id[@]}"; do
 		fi
 	done
 	if [[ $found == false ]]; then
-		echo "Does not have MFA: $i"
+		echo -e "${RED}Does not have MFA: ${users_name[$i]} ${NC}"
 	fi
 done
+echo
+
+rows=""
+rows+="Name\tEnabled\tVerMeth\n"
+for i in "${protect_user_id[@]}"; do
+	name=${users_name[$i]}
+	enabled=${protect_enabled[$i]}
+	ver_meth=${protect_ver_meth[$i]}
+	rows+="${name}\t${enabled}\t${ver_meth}\n"
+done
+echo -e "$rows" | column -t
+echo
