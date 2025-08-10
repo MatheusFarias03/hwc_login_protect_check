@@ -18,11 +18,6 @@ for ((i=0; i < user_count; i++)); do
 	users_id[$i]=$current_user_id
 	users_name[$current_user_id]=$(echo $list_users_json | jq -r ".users[$i].name")
 	users_domain_id[$current_user_id]=$(echo $list_users_json | jq -r ".users[$i].domain_id")
-	
-	echo "${users_id[$i]}"
-	echo "${users_name[${users_id[$i]}]}"
-	echo "${users_domain_id[${users_id[$i]}]}"
-	echo
 done
 
 
@@ -37,8 +32,20 @@ for ((i=0; i < protect_users_count; i++)); do
 	current_user_id=$(echo $login_protects_json | jq -r ".login_protects[$i].user_id")
 	protect_user_id[$i]=$current_user_id
 	protect_enabled[$current_user_id]=$(echo $login_protects_json | jq -r ".login_protects[$I].enabled")
-	echo "${protect_user_id[$i]}"
-	echo "${protect_enabled[${protect_user_id[$i]}]}"
-	echo
+	protect_ver_meth[$current_user_id]=$(echo $login_protects_json | jq -r ".login_protects[$I].verification_method")
 done
 
+
+# Iterate on both to see who has MFA activated.
+for i in "${users_id[@]}"; do
+	found=false
+	for j in "${protect_user_id[@]}"; do
+		if [[ "$i" == "$j" ]]; then
+			found=true
+			break
+		fi
+	done
+	if [[ $found == false ]]; then
+		echo "Does not have MFA: $i"
+	fi
+done
