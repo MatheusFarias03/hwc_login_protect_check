@@ -35,6 +35,10 @@ declare -A protect_ver_meth
 
 for ((i=0; i < protect_users_count; i++)); do
 	current_user_id=$(echo $login_protects_json | jq -r ".login_protects[$i].user_id")
-	echo "${current_user_id}"
-	echo	
+	protect_user_id[$i]=$current_user_id
+	protect_enabled[$current_user_id]=$(echo $login_protects_json | jq -r ".login_protects[$I].enabled")
+	echo "${protect_user_id[$i]}"
+	echo "${protect_enabled[${protect_user_id[$i]}]}"
+	echo
 done
+
