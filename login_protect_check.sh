@@ -1,5 +1,13 @@
 #!/bin/bash
-
+#==============================================================================
+# Script Name   : login_protect_check.sh
+# Description   : Bash script to verify if IAM users have MFA on Huawei Cloud.
+# Author        : Matheus Matsumoto
+# Created       : 2025-08-10
+# Version       : 1.0
+# Dependencies  : bash >= 4.0, hcloud, jq
+# Usage         : ./login_protect_check.sh
+#==============================================================================
 
 # Color codes.
 RED='\033[0;31m'
